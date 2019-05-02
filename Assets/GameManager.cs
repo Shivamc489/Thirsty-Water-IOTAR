@@ -1,38 +1,38 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
+using UnityEngine.Networking;
+using System.Globalization;
 
 
 public class GameManager : MonoBehaviour
 {
     public GameObject Cube;
-    public string ipAddress;
-    public int port;
+    public string webAddress="http://192.168.43.44:8000/Music/CoolTerm.txt";
     public float read;
-    TcpClient client = new TcpClient();
-
-    public void Start()
-    {
-        Cube.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        client.Connect(ipAddress, port);
+    int i = 0;
         
-
+    public void FixedUpdate()
+    {
+        StartCoroutine(userEnable());
     }
-    public void Update()
-    {
-        
-            var stream = new StreamReader(client.GetStream());
 
-            while(client.Connected)
-            {
-                read = float.Parse(stream.ReadLine());
-                Debug.Log(read);
-                Cube.transform.localScale=new Vector3(read, 1.0f, 1.0f);
-            }
+    IEnumerator userEnable()
+    {
+        UnityWebRequest www = UnityWebRequest.Get(webAddress);
+        yield return www.SendWebRequest();
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            string r = www.downloadHandler.text;
+            Debug.Log(r.Substring(r.Length-4));
+            read = float.Parse(r.Substring(r.Length - 4));
+            Debug.Log(read);
+            Cube.transform.localScale = new Vector3(0.01f*read, 1.0f, 1.0f);
+        }
     }
 }
-
