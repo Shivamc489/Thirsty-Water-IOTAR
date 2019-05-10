@@ -68,6 +68,7 @@
     <Compile Include="Assets\WebStreamReader.cs" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
     <None Include="Assets\EasyWater\Shaders_Tex\EasyWater2.shader" />
+    <None Include="Assets\plants\dd\AlphaTest-Bumped.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\EasyWater\Shaders_Tex\EasyWater2_no_color.shader" />
     <None Include="Assets\EasyWater\Shaders_Tex\EasyWater7.shader" />
@@ -310,9 +311,6 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.11f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/Shivam/Thirsty Water Project/Thirsty-Water-IOTAR/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/Shivam/Thirsty Water Project/Thirsty-Water-IOTAR/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -321,9 +319,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/Shivam/Thirsty Water Project/Thirsty-Water-IOTAR/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/Shivam/Thirsty Water Project/Thirsty-Water-IOTAR/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.11f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
